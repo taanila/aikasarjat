@@ -1,3 +1,3 @@
 # aikasarjat
-Aikasarjojen esittäminen ja analysointi
+Aikasarjojen esittäminen, analysointi ja ennustaminen
 https://tilastoapu.wordpress.com/python
