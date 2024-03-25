@@ -12,15 +12,16 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 import xlwings as xw
 from statsmodels.tsa.api import ExponentialSmoothing
 import warnings
 warnings.filterwarnings('ignore')
-plt.style.use('seaborn-whitegrid')
+sns.set_style('whitegrid')
 
 # Datan nouto ja siivous
-df = pd.read_csv('https://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/co2/co2_mm_mlo.txt',\
-sep='\s+', skiprows=54, usecols=[0, 1, 3], names=['year', 'month', 'average'])
+df = pd.read_csv('https://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/co2/co2_mm_mlo.txt',
+                 sep='\s+', skiprows=58, usecols=[0, 1, 3], names=['year', 'month', 'average'])
 df.index = pd.to_datetime(df['year'].astype(str) + df['month'].astype(str), format='%Y%m')
 df = df.drop(['year', 'month'], axis=1)
 
